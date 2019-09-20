@@ -83,7 +83,7 @@
     "extends": "@cablanchard/semantic-release/dist/npm"
   },
   "devDependencies": {
-    "@cablanchard/eslint-config": "~1.1.0",
+    "@cablanchard/eslint-config": "~1.1.1",
     "@cablanchard/semantic-release": "~1.2.1",
     "@cablanchard/tsconfig": "~1.0.0",
     "@types/chai": "~4.2.0",
