@@ -2,17 +2,22 @@ export type SupportMatrix = Record<string, Browser>;
 
 export interface Browser {
   // Browser (e.g. IE, Chrome)
-  browser: string;
-  // Browser version number (e.g. 74)
-  browser_version?: string;
-  // Operating system (e.g. Windows)
-  os: string;
-  // Operating system version (e.g. 10)
-  os_version: string;
-  // Mobile device. E.g. "iPhone 4s
-  device?: string;
-  mobile?: boolean;
+  browserName: string;
+  // Browser version number and? bit version (e.g. 74x64)
+  version?: string;
+  // Operating system and version (e.g. Windows 10)
+  platform?: string;
+  // Mobile device (e.g. iPhone 4s)
+  deviceName?: string;
+  // Mobile platform version (e.g. 9.0)
+  platformVersion?: string;
+  // Mobile platform name (e.g. Android)
+  platformName?: string;
+  // Mobile device orientation (e.g landscape)
+  deviceOrientation?: string;
+  // Our addition
   desktop?: boolean;
+  mobile?: boolean;
   legacy?: boolean;
   latest?: boolean;
 }
@@ -22,87 +27,101 @@ export interface Browser {
  */
 export const browsers: SupportMatrix = {
   // Latest Desktop
-  "Chrome-74.0": {
-    browser: "Chrome",
-    browser_version: "74",
-    os: "Windows",
-    os_version: "10",
+  'chrome': {
+    browserName: 'Chrome',
+    version: '77x64',
+    platform: 'Windows 10',
     desktop: true,
     latest: true,
   },
-  "Firefox-66.0": {
-    browser: "Firefox",
-    browser_version: "66.0",
-    os: "Windows",
-    os_version: "10",
+  "firefox": {
+    browserName: 'Firefox',
+    version: '69x64',
+    platform: 'Windows 10',
     desktop: true,
     latest: true,
   },
-  "Safari-12.1": {
-    browser: "Safari",
-    browser_version: "12.0",
-    os: "OS X",
-    os_version: "Mojave",
+  "safari": {
+    browserName: 'Safari',
+    version: '12',
+    platform: 'Mac OSX 10.14',
     desktop: true,
     latest: true,
   },
-  "Edge-18": {
-    browser: "Edge",
-    browser_version: "18",
-    os: "Windows",
-    os_version: "10",
+  "edge": {
+    browserName: 'MicrosoftEdge',
+    version: '18',
+    platform: 'Windows 10',
     desktop: true,
     latest: true,
   },
 
   // Legacy Desktop
-  "IE-11.0": {
-    browser: "IE",
-    browser_version: "11",
-    os: "Windows",
-    os_version: "10",
+  "ie": {
+    browserName: 'Internet Explorer',
+    version: '11',
+    platform: 'Windows 10',
     desktop: true,
     legacy: true,
   },
-  "Chrome-40.0": {
-    browser: "Chrome",
-    browser_version: "40",
-    os: "Windows",
-    os_version: "10",
+  "chrome-legacy": {
+    browserName: 'Chrome',
+    version: '43',
+    platform: 'Windows 10',
     desktop: true,
     legacy: true,
   },
-  "Safari-9.1": {
-    browser: "Safari",
-    browser_version: "9.1",
-    os: "OS X",
-    os_version: "El Capitan",
+  "safari-legacy": {
+    browserName: 'Safari',
+    version: '9',
+    platform: 'Mac OSX 10.11',
     desktop: true,
     legacy: true,
   },
-  "Firefox-48.0": {
-    browser: "Firefox",
-    browser_version: "48",
-    os: "Windows",
-    os_version: "10",
+  "firefox-legacy": {
+    browserName: 'Firefox',
+    version: '48',
+    platform: 'Windows 10',
     desktop: true,
+    legacy: true,
+  },
+  
+  // Latest Mobile
+  "android-latest": {
+    browserName: 'Chrome',
+    deviceName: 'Pixel 3',
+    platformVersion: '9.0',
+    platformName: 'Android',
+    deviceOrientation: 'portrait',
+    mobile: true,
+    legacy: true,
+  },
+  "ios-latest": {
+    browserName: 'Safari',
+    deviceName: 'iPad 6th Generation Simulator',
+    platformVersion: '12.0',
+    platformName: 'iOS',
+    deviceOrientation: 'landscape',
+    mobile: true,
     legacy: true,
   },
 
   // Legacy Mobile
-  "Android-4": {
-    browser: "android",
-    os: "android",
-    os_version: "4.0",
-    device: "Google Nexus",
+  "android-legacy": {
+    browserName: 'Chrome',
+    deviceName: 'Nexus 6',
+    platformVersion: '5.0',
+    platformName: 'Android',
+    deviceOrientation: 'portrait',
     mobile: true,
     legacy: true,
   },
-  "ios-5.1": {
-    browser: "iPhone",
-    os: "ios",
-    os_version: "5.1",
-    device: "iPhone 4S",
+  "ios-legacy": {
+    browserName: 'Safari',
+    deviceName: 'iPad Pro Simulator',
+    platformVersion: '9.3',
+    platformName: 'iOS',
+    deviceOrientation: 'landscape',
     mobile: true,
     legacy: true,
   },
