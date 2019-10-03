@@ -8,6 +8,8 @@
 
 `@ideal-postcodes/supported-browsers` exports a matrix of supported browsers
 
+- Browser exports for [Cross Browser Testing](https://crossbrowsertesting.com)
+
 ## Links
 
 - [Documentation](https://supported-browsers.ideal-postcodes.dev)
