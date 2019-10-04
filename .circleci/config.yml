@@ -12,13 +12,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-{{ checksum "package-lock.json" }}
       - run: npm install
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
       - run: npm test
+      - run: npm run build
 
 workflows:
   version: 2
@@ -35,4 +36,3 @@ workflows:
             branches:
               only:
                 - master
-    
