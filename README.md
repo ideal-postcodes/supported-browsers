@@ -25,7 +25,14 @@ npm install @ideal-postcodes/supported-browsers
 ```
 
 ```javascript
-import { browsers } from "@ideal-postcodes/supported-browsers";
+// Retrieve tested browser matrix
+import { browsers, toCbtLaunchers } from "@ideal-postcodes/supported-browsers";
+
+// Generate CBT launchers
+toCbtLaunchers(browsers, { 
+  name: "core-interface",
+  build: "gitsha",
+});
 ```
 
 ## Test
