@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ideal-postcodes/supported-browsers/compare/1.1.0...1.1.1) (2019-10-15)
+
+
+### Bug Fixes
+
+* **CI:** Run latest node ([39f3bdd](https://github.com/ideal-postcodes/supported-browsers/commit/39f3bdd))
+
 # [1.1.0](https://github.com/ideal-postcodes/supported-browsers/compare/1.0.0...1.1.0) (2019-10-14)
 
 
