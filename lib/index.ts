@@ -127,7 +127,7 @@ export const browsers: SupportMatrix = {
   },
 };
 
-type CbtLauncher = DesktopLauncher | MobileLauncher;
+export type CbtLauncher = DesktopLauncher | MobileLauncher;
 
 interface BuildInfo {
   name: string;
