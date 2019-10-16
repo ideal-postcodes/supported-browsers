@@ -118,10 +118,10 @@ export const browsers: SupportMatrix = {
   },
   "ios-legacy": {
     browserName: "Safari",
-    deviceName: "iPad Pro Simulator",
+    deviceName: "iPhone 6s Plus Simulator",
     platformVersion: "9.3",
     platformName: "iOS",
-    deviceOrientation: "landscape",
+    deviceOrientation: "portrait",
     mobile: true,
     legacy: true,
   },
