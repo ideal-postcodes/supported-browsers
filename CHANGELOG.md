@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ideal-postcodes/supported-browsers/compare/1.1.1...1.2.0) (2019-10-16)
+
+
+### Features
+
+* **ios:** Switch to iphone 6 simulator ([b37d76f](https://github.com/ideal-postcodes/supported-browsers/commit/b37d76f))
+
 ## [1.1.1](https://github.com/ideal-postcodes/supported-browsers/compare/1.1.0...1.1.1) (2019-10-15)
 
 
