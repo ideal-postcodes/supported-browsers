@@ -71,13 +71,6 @@ export const browsers: SupportMatrix = {
     desktop: true,
     legacy: true,
   },
-  "safari-legacy": {
-    browserName: "Safari",
-    version: "9",
-    platform: "Mac OSX 10.11",
-    desktop: true,
-    legacy: true,
-  },
   "firefox-legacy": {
     browserName: "Firefox",
     version: "48",
