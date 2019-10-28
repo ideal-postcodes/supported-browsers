@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/ideal-postcodes/supported-browsers/compare/1.2.0...1.2.1) (2019-10-28)
+
+
+### Bug Fixes
+
+* **Safari:** Remove Safari Desktop ([54ca227](https://github.com/ideal-postcodes/supported-browsers/commit/54ca227))
+
 # [1.2.0](https://github.com/ideal-postcodes/supported-browsers/compare/1.1.1...1.2.0) (2019-10-16)
 
 
