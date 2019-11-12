@@ -23,7 +23,7 @@
     "docs": "typedoc --mode file --out docs/ --name 'Ideal Postcodes Browser Support Matrix' --theme minimal --excludePrivate --hideGenerator --excludeExternals lib/",
     "lint": "eslint lib/**/*.ts",
     "build": "npm run lint && tsc",
-    "release": "semantic-release --no-ci",
+    "semantic-release": "semantic-release",
     "prepublishOnly": "npm test && npm run build"
   },
   "prettier": {
