@@ -1,183 +1,121 @@
 export type SupportMatrix = Record<string, Browser>;
 
-export interface Browser {
+export type Browser = MobileBrowser | DesktopBrowser;
+
+interface DesktopBrowser {
+  base: "SauceLabs";
   // Browser (e.g. IE, Chrome)
   browserName: string;
   // Browser version number and? bit version (e.g. 74x64)
-  version?: string;
+  version: string;
+  // Operating system and version (e.g. Windows 10)
+  platform?: string;
+}
+
+interface MobileBrowser {
+  base: "SauceLabs";
+  // Browser (e.g. IE, Chrome)
+  browserName: string;
+  // Browser version number and? bit version (e.g. 74x64)
+  version: string;
   // Operating system and version (e.g. Windows 10)
   platform?: string;
   // Mobile device (e.g. iPhone 4s)
-  deviceName?: string;
-  // Mobile platform version (e.g. 9.0)
-  platformVersion?: string;
-  // Mobile platform name (e.g. Android)
-  platformName?: string;
-  // Mobile device orientation (e.g landscape)
-  deviceOrientation?: string;
-  // Our addition
-  desktop?: boolean;
-  mobile?: boolean;
-  legacy?: boolean;
-  latest?: boolean;
+  deviceName: string;
+  // Portrait or landscape
+  deviceOrientation: string;
 }
+
+const base = "SauceLabs";
+
+export const latestDesktop: SupportMatrix = {
+  chrome: {
+    base,
+    browserName: "chrome",
+    version: "latest",
+  },
+  firefox: {
+    base,
+    browserName: "firefox",
+    version: "latest",
+  },
+  safari: {
+    base,
+    browserName: "safari",
+    version: "latest",
+  },
+  edge: {
+    base,
+    browserName: "microsoftedge",
+    version: "latest",
+  },
+};
+
+export const legacyDesktop: SupportMatrix = {
+  ie: {
+    base,
+    browserName: "internet explorer",
+    version: "11",
+    platform: "Windows 8.1",
+  },
+  "chrome-legacy": {
+    base,
+    browserName: "chrome",
+    version: "43.0",
+    platform: "Windows 10",
+  },
+  "firefox-legacy": {
+    base,
+    browserName: "firefox",
+    version: "48.0",
+    platform: "Windows 10",
+  },
+};
+
+export const latestMobile: SupportMatrix = {
+  "ios-latest": {
+    base,
+    deviceOrientation: "portrait",
+    deviceName: "iPhone X Simulator",
+    browserName: "Safari",
+    version: "13.0",
+    platform: "iOS",
+  },
+  "android-latest": {
+    base,
+    deviceName: "Android GoogleAPI Emulator",
+    deviceOrientation: "portrait",
+    browserName: "Chrome",
+    version: "5.1",
+    platform: "Android",
+  },
+};
+
+export const legacyMobile: SupportMatrix = {
+  "android-legacy": {
+    base,
+    browserName: "Browser",
+    deviceName: "Android GoogleAPI Emulator",
+    deviceOrientation: "portrait",
+    version: "5.1",
+    platform: "Android",
+  },
+  "ios-legacy": {
+    base,
+    browserName: "Safari",
+    deviceName: "iPhone SE Simulator",
+    deviceOrientation: "portrait",
+    version: "10.3",
+    platform: "iOS",
+  },
+};
 
 /**
  * Export supported browsers
  */
 export const browsers: SupportMatrix = {
-  // Latest Desktop
-  chrome: {
-    browserName: "Chrome",
-    version: "77x64",
-    platform: "Windows 10",
-    desktop: true,
-    latest: true,
-  },
-  firefox: {
-    browserName: "Firefox",
-    version: "69x64",
-    platform: "Windows 10",
-    desktop: true,
-    latest: true,
-  },
-  safari: {
-    browserName: "Safari",
-    version: "12",
-    platform: "Mac OSX 10.14",
-    desktop: true,
-    latest: true,
-  },
-  edge: {
-    browserName: "MicrosoftEdge",
-    version: "18",
-    platform: "Windows 10",
-    desktop: true,
-    latest: true,
-  },
-
-  // Legacy Desktop
-  ie: {
-    browserName: "Internet Explorer",
-    version: "11",
-    platform: "Windows 10",
-    desktop: true,
-    legacy: true,
-  },
-  "chrome-legacy": {
-    browserName: "Chrome",
-    version: "43",
-    platform: "Windows 10",
-    desktop: true,
-    legacy: true,
-  },
-  "firefox-legacy": {
-    browserName: "Firefox",
-    version: "48",
-    platform: "Windows 10",
-    desktop: true,
-    legacy: true,
-  },
-
-  // Latest Mobile
-  "android-latest": {
-    browserName: "Chrome",
-    deviceName: "Pixel 3",
-    platformVersion: "9.0",
-    platformName: "Android",
-    deviceOrientation: "portrait",
-    mobile: true,
-    legacy: true,
-  },
-  "ios-latest": {
-    browserName: "Safari",
-    deviceName: "iPad 6th Generation Simulator",
-    platformVersion: "12.0",
-    platformName: "iOS",
-    deviceOrientation: "landscape",
-    mobile: true,
-    legacy: true,
-  },
-
-  // Legacy Mobile
-  "android-legacy": {
-    browserName: "Chrome",
-    deviceName: "Nexus 6",
-    platformVersion: "5.0",
-    platformName: "Android",
-    deviceOrientation: "portrait",
-    mobile: true,
-    legacy: true,
-  },
-  "ios-legacy": {
-    browserName: "Safari",
-    deviceName: "iPhone 6s Plus Simulator",
-    platformVersion: "9.3",
-    platformName: "iOS",
-    deviceOrientation: "portrait",
-    mobile: true,
-    legacy: true,
-  },
-};
-
-export type CbtLauncher = DesktopLauncher | MobileLauncher;
-
-interface BuildInfo {
-  name: string;
-  build: string;
-}
-
-interface DesktopLauncher extends BuildInfo {
-  browserName: string;
-  base: "CrossBrowserTesting";
-  screenResolution: string;
-  version: string;
-  platform: string;
-}
-
-interface MobileLauncher extends BuildInfo {
-  browserName: string;
-  base: "CrossBrowserTesting";
-  deviceName: string;
-  platformVersion: string;
-  platformName: string;
-  deviceOrientation: string;
-}
-
-const base = "CrossBrowserTesting";
-const screenResolution = "1366x768";
-
-interface ToCbtLaunchers {
-  (matrix: SupportMatrix, buildInfo: BuildInfo): Record<string, CbtLauncher>;
-}
-
-/**
- * Returns a map of custom CBT launchers compatible with karma-cbt-launcher
- * given a browser support matrix and build information
- */
-export const toCbtLaunchers: ToCbtLaunchers = (matrix, buildInfo) => {
-  const launchers: Record<string, CbtLauncher> = {};
-  Object.entries(matrix).forEach(([key, browser]) => {
-    if (browser.mobile) {
-      launchers[key] = {
-        base,
-        ...buildInfo,
-        browserName: browser.browserName,
-        deviceName: browser.deviceName || "",
-        platformVersion: browser.platformVersion || "",
-        platformName: browser.platformName || "",
-        deviceOrientation: browser.deviceOrientation || "",
-      };
-    } else {
-      launchers[key] = {
-        base,
-        screenResolution,
-        ...buildInfo,
-        browserName: browser.browserName,
-        version: browser.version || "",
-        platform: browser.platform || "",
-      };
-    }
-  });
-  return launchers;
+  ...latestDesktop,
+  ...legacyDesktop,
+  ...latestMobile,
+  ...legacyMobile,
 };
