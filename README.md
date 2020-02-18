@@ -3,13 +3,12 @@
 > Matrix of supported browsers for automated javascript testing
 
 [![CircleCI](https://circleci.com/gh/ideal-postcodes/supported-browsers.svg?style=svg)](https://circleci.com/gh/ideal-postcodes/supported-browsers)
-![Dependency Status](https://david-dm.org/ideal-postcodes/supported-browsers.svg)
 [![npm version](https://badge.fury.io/js/%40ideal-postcodes%2Fsupported-browsers.svg)](https://badge.fury.io/js/%40ideal-postcodes%2Fsupported-browsers)
 [![Release](https://github.com/ideal-postcodes/supported-browsers/workflows/npm%20Release/badge.svg)](https://github.com/ideal-postcodes/supported-browsers/actions)
 
 `@ideal-postcodes/supported-browsers` exports a matrix of supported browsers
 
-- Browser exports for [Cross Browser Testing](https://crossbrowsertesting.com)
+- Browser exports for [Saucelabs](https://saucelabs.com)
 
 ## Links
 
@@ -19,6 +18,31 @@
 
 ## Documentation
 
+### Supported Browsers
+
+#### Latest Desktop
+
+- Chrome
+- Safari
+- Firefox
+- Edge
+
+#### Latest Mobile
+
+- Safari (iOS 13.0)
+- Chrome (Android)
+
+#### Legacy Desktop
+
+- Internet Explorer 11
+- Firefox 48
+- Chrome 43
+
+#### Legacy Mobile
+
+- Android Browser (Android 5.1)
+- Safari (iOS 10.3)
+
 ### Configuration & Usage
 
 ```bash
@@ -27,13 +51,7 @@ npm install @ideal-postcodes/supported-browsers
 
 ```javascript
 // Retrieve tested browser matrix
-import { browsers, toCbtLaunchers } from "@ideal-postcodes/supported-browsers";
-
-// Generate CBT launchers
-toCbtLaunchers(browsers, { 
-  name: "core-interface",
-  build: "gitsha",
-});
+import { browsers } from "@ideal-postcodes/supported-browsers";
 ```
 
 ## Test
