@@ -8,15 +8,9 @@
 
 `@ideal-postcodes/supported-browsers` exports a matrix of supported browsers
 
-- Browser exports for [Saucelabs](https://saucelabs.com)
-
-## Links
-
-- [Documentation](https://supported-browsers.ideal-postcodes.dev)
-- [@ideal-postcodes/core-interface](https://github.com/ideal-postcodes/core-interface)
-- [@ideal-postcodes/core-browser](https://github.com/ideal-postcodes/core-browser)
-
 ## Documentation
+
+Browser exports for [Saucelabs](https://saucelabs.com)
 
 ### Supported Browsers
 
