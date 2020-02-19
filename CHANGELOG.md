@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/ideal-postcodes/supported-browsers/compare/1.2.1...2.0.0) (2020-02-19)
+
+
+### Features
+
+* **Saucelabs:** Migate to saucelabs ([f13416f](https://github.com/ideal-postcodes/supported-browsers/commit/f13416f))
+
+
+### BREAKING CHANGES
+
+* **Saucelabs:** - CBT configuration removed
+- Some mobile legacy floor versions bumped
+
 ## [1.2.1](https://github.com/ideal-postcodes/supported-browsers/compare/1.2.0...1.2.1) (2019-10-28)
 
 
