@@ -3,12 +3,13 @@
 
 ### Features
 
-* **Saucelabs:** Migate to saucelabs ([f13416f](https://github.com/ideal-postcodes/supported-browsers/commit/f13416f))
+* **Saucelabs:** Migrate to saucelabs ([f13416f](https://github.com/ideal-postcodes/supported-browsers/commit/f13416f))
 
 
 ### BREAKING CHANGES
 
-* **Saucelabs:** - CBT configuration removed
+- CBT configuration removed
+- Saucelabs configuration added
 - Some mobile legacy floor versions bumped
 
 ## [1.2.1](https://github.com/ideal-postcodes/supported-browsers/compare/1.2.0...1.2.1) (2019-10-28)
