@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/ideal-postcodes/supported-browsers/compare/2.0.0...2.1.0) (2020-02-20)
+
+
+### Features
+
+* **Util:** Add util functions to generate sauce config ([4678f53](https://github.com/ideal-postcodes/supported-browsers/commit/4678f53))
+
 # [2.0.0](https://github.com/ideal-postcodes/supported-browsers/compare/1.2.1...2.0.0) (2020-02-19)
 
 
