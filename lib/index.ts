@@ -160,7 +160,6 @@ export const config = ({ testName, build, defaults = {} }: Options) => ({
   plugins: [
     "karma-mocha",
     "karma-typescript",
-    "karma-polyfill",
     "karma-sauce-launcher",
   ],
   browserDisconnectTimeout: 10000,
