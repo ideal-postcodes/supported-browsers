@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/ideal-postcodes/supported-browsers/compare/2.1.0...2.1.1) (2020-02-20)
+
+
+### Bug Fixes
+
+* **Plugins:** Drop karma polyfill ([769a201](https://github.com/ideal-postcodes/supported-browsers/commit/769a201))
+
 # [2.1.0](https://github.com/ideal-postcodes/supported-browsers/compare/2.0.0...2.1.0) (2020-02-20)
 
 
