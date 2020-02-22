@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/ideal-postcodes/supported-browsers/compare/2.1.1...2.2.0) (2020-02-22)
+
+
+### Features
+
+* **Latest Mobile:** Update versions ([72706e7](https://github.com/ideal-postcodes/supported-browsers/commit/72706e7))
+
 ## [2.1.1](https://github.com/ideal-postcodes/supported-browsers/compare/2.1.0...2.1.1) (2020-02-20)
 
 
