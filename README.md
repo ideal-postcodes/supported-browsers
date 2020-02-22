@@ -23,8 +23,8 @@ Browser exports for [Saucelabs](https://saucelabs.com)
 
 #### Latest Mobile
 
-- Safari (iOS 13.0)
-- Chrome (Android)
+- Safari (iOS)
+- Chrome (Android 7.0)
 
 #### Legacy Desktop
 
