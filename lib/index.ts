@@ -80,7 +80,7 @@ export const latestMobile: SupportMatrix = {
     deviceOrientation: "portrait",
     deviceName: "iPhone X Simulator",
     browserName: "Safari",
-    version: "13.0",
+    version: "latest",
     platform: "iOS",
   },
   "android-latest": {
@@ -88,7 +88,7 @@ export const latestMobile: SupportMatrix = {
     deviceName: "Android GoogleAPI Emulator",
     deviceOrientation: "portrait",
     browserName: "Chrome",
-    version: "5.1",
+    version: "7.0",
     platform: "Android",
   },
 };
