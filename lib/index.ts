@@ -169,6 +169,7 @@ export const config = ({ testName, build, defaults = {} }: Options) => ({
   transports: ["websocket", "polling"],
   sauceLabs: {
     testName,
+    region: "eu",
     startConnect: true,
     build: build === undefined ? generateBuild() : build,
     recordVideo: false,

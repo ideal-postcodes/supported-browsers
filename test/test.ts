@@ -33,6 +33,7 @@ describe("sauceConfig", () => {
   it("generates sauce config", () => {
     const conf = config({ testName: "foo" });
     assert.isString(conf.sauceLabs.build);
+    assert.equal(conf.sauceLabs.region, "eu");
     assert.equal(conf.sauceLabs.testName, "foo");
   });
 });
