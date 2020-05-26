@@ -1,3 +1,10 @@
+## [2.3.2](https://github.com/ideal-postcodes/supported-browsers/compare/2.3.1...2.3.2) (2020-05-26)
+
+
+### Bug Fixes
+
+* **Safari:** Set OS to Catalina ([b5e692b](https://github.com/ideal-postcodes/supported-browsers/commit/b5e692b))
+
 ## [2.3.1](https://github.com/ideal-postcodes/supported-browsers/compare/2.3.0...2.3.1) (2020-05-26)
 
 
