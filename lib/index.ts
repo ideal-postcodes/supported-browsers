@@ -45,6 +45,7 @@ export const latestDesktop: SupportMatrix = {
     base,
     browserName: "safari",
     version: "latest",
+    platform: "macOS 10.15",
   },
   edge: {
     base,
