@@ -2,9 +2,9 @@
 
 > Matrix of supported browsers for automated javascript testing
 
-[![CircleCI](https://circleci.com/gh/ideal-postcodes/supported-browsers.svg?style=svg)](https://circleci.com/gh/ideal-postcodes/supported-browsers)
 [![npm version](https://badge.fury.io/js/%40ideal-postcodes%2Fsupported-browsers.svg)](https://badge.fury.io/js/%40ideal-postcodes%2Fsupported-browsers)
-[![Release](https://github.com/ideal-postcodes/supported-browsers/workflows/npm%20Release/badge.svg)](https://github.com/ideal-postcodes/supported-browsers/actions)
+![Release](https://github.com/ideal-postcodes/supported-browsers/workflows/Release/badge.svg)
+![CI](https://github.com/ideal-postcodes/supported-browsers/workflows/CI/badge.svg)
 
 `@ideal-postcodes/supported-browsers` exports a matrix of supported browsers
 
