@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/ideal-postcodes/supported-browsers/compare/2.2.0...2.3.0) (2020-05-26)
+
+
+### Features
+
+* **Saucelabs:** Enable EU region ([78d9ea4](https://github.com/ideal-postcodes/supported-browsers/commit/78d9ea4))
+
 # [2.2.0](https://github.com/ideal-postcodes/supported-browsers/compare/2.1.1...2.2.0) (2020-02-22)
 
 
