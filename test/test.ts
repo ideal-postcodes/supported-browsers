@@ -34,6 +34,7 @@ describe("sauceConfig", () => {
     const conf = config({ testName: "foo" });
     assert.isString(conf.sauceLabs.build);
     assert.equal(conf.sauceLabs.region, "eu");
+    assert.isTrue(conf.singleRun);
     assert.equal(conf.sauceLabs.testName, "foo");
   });
 });

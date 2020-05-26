@@ -131,9 +131,7 @@ export const ci = (): boolean => process.env.GITHUB_ACTION !== undefined;
  * Retrieve git sha
  */
 export const gitSha = (): string =>
-  execSync("git rev-parse --short HEAD")
-    .toString()
-    .trim();
+  execSync("git rev-parse --short HEAD").toString().trim();
 
 /**
  * Build ID
@@ -157,14 +155,11 @@ interface Options {
 export const config = ({ testName, build, defaults = {} }: Options) => ({
   ...defaults,
   reporters: ["dots", "karma-typescript", "saucelabs"],
-  plugins: [
-    "karma-mocha",
-    "karma-typescript",
-    "karma-sauce-launcher",
-  ],
+  plugins: ["karma-mocha", "karma-typescript", "karma-sauce-launcher"],
   browserDisconnectTimeout: 10000,
   browserDisconnectTolerance: 2,
   browserNoActivityTimeout: 30000,
+  singleRun: true,
   captureTimeout: 120000,
   transports: ["websocket", "polling"],
   sauceLabs: {
