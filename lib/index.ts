@@ -4,53 +4,66 @@ export type SupportMatrix = Record<string, Browser>;
 
 export type Browser = MobileBrowser | DesktopBrowser;
 
+interface SauceOptions {
+  screenResolution?: string;
+}
+
 interface DesktopBrowser {
   base: "SauceLabs";
   // Browser (e.g. IE, Chrome)
   browserName: string;
   // Browser version number and? bit version (e.g. 74x64)
-  version: string;
+  browserVersion: string;
   // Operating system and version (e.g. Windows 10)
-  platform?: string;
+  platformName?: string;
+  "sauce:options"?: SauceOptions;
 }
 
 interface MobileBrowser {
   base: "SauceLabs";
+  appiumVersion?: string;
   // Browser (e.g. IE, Chrome)
   browserName: string;
   // Browser version number and? bit version (e.g. 74x64)
-  version: string;
-  // Operating system and version (e.g. Windows 10)
+  browserVersion?: string;
+  // Operating system
+  platformName?: string;
   platform?: string;
+  // Operating system version number
+  platformVersion?: string;
+  version?: string;
   // Mobile device (e.g. iPhone 4s)
-  deviceName: string;
+  deviceName?: string;
+  device?: string;
   // Portrait or landscape
-  deviceOrientation: string;
+  deviceOrientation?: string;
 }
 
 const base = "SauceLabs";
+
+const appiumVersion = "1.17.1";
 
 export const latestDesktop: SupportMatrix = {
   chrome: {
     base,
     browserName: "chrome",
-    version: "latest",
+    browserVersion: "latest",
   },
   firefox: {
     base,
     browserName: "firefox",
-    version: "latest",
+    browserVersion: "latest",
   },
   safari: {
     base,
     browserName: "safari",
-    version: "latest",
-    platform: "macOS 10.15",
+    browserVersion: "latest",
+    platformName: "macOS 10.15",
   },
   edge: {
     base,
     browserName: "microsoftedge",
-    version: "latest",
+    browserVersion: "latest",
   },
 };
 
@@ -58,58 +71,47 @@ export const legacyDesktop: SupportMatrix = {
   ie: {
     base,
     browserName: "internet explorer",
-    version: "11",
-    platform: "Windows 8.1",
-  },
-  "chrome-legacy": {
-    base,
-    browserName: "chrome",
-    version: "43.0",
-    platform: "Windows 10",
-  },
-  "firefox-legacy": {
-    base,
-    browserName: "firefox",
-    version: "48.0",
-    platform: "Windows 10",
+    browserVersion: "11",
+    platformName: "Windows 8.1",
   },
 };
 
 export const latestMobile: SupportMatrix = {
   "ios-latest": {
     base,
-    deviceOrientation: "portrait",
-    deviceName: "iPhone X Simulator",
+    appiumVersion,
+    deviceName: "iPhone 11 Simulator",
+    platformVersion: "13.4",
+    platformName: "iOS",
     browserName: "Safari",
-    version: "latest",
-    platform: "iOS",
   },
   "android-latest": {
     base,
+    appiumVersion,
     deviceName: "Android GoogleAPI Emulator",
-    deviceOrientation: "portrait",
     browserName: "Chrome",
-    version: "7.0",
-    platform: "Android",
+    platformVersion: "11.0",
+    platformName: "Android",
   },
 };
 
 export const legacyMobile: SupportMatrix = {
   "android-legacy": {
     base,
-    browserName: "Browser",
+    appiumVersion,
     deviceName: "Android GoogleAPI Emulator",
-    deviceOrientation: "portrait",
-    version: "5.1",
-    platform: "Android",
+    browserName: "Browser",
+    platformVersion: "5.1",
+    platformName: "Android",
   },
   "ios-legacy": {
     base,
     browserName: "Safari",
-    deviceName: "iPhone SE Simulator",
+    deviceName: "iPhone Simulator",
     deviceOrientation: "portrait",
-    version: "10.3",
-    platform: "iOS",
+    platformVersion: "10.3",
+    platformName: "iOS",
+    appiumVersion: "1.9.1",
   },
 };
 
@@ -150,11 +152,24 @@ interface Options {
   build?: string;
 }
 
+const ni = require("os").networkInterfaces();
+const hostname = Object.keys(ni)
+  .map((interf) =>
+    // @ts-ignore
+    ni[interf].map((o) => !o.internal && o.family === "IPv4" && o.address)
+  )
+  .reduce((a, b) => a.concat(b))
+  // @ts-ignore
+  .filter((o) => o)[0];
+
 /**
  * Generates sauce config
  */
 export const config = ({ testName, build, defaults = {} }: Options) => ({
   ...defaults,
+  // Hostname points to IP address. Due to a change in Android where the VM
+  // will point to its own localhost and not karma server
+  hostname,
   reporters: ["dots", "karma-typescript", "saucelabs"],
   plugins: ["karma-mocha", "karma-typescript", "karma-sauce-launcher"],
   browserDisconnectTimeout: 10000,
