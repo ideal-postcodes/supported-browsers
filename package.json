@@ -106,7 +106,7 @@
     "core-js": "~3.6.5",
     "karma-cli": "~2.0.0",
     "karma-mocha": "~2.0.1",
-    "karma-sauce-launcher": "~4.1.6",
+    "karma-sauce-launcher": "~4.3.3",
     "karma-typescript": "~5.2.0",
     "puppeteer": "~5.4.1",
     "regenerator-runtime": "~0.13.7"
