@@ -1,4 +1,5 @@
 import { execSync } from "child_process";
+import { networkInterfaces } from "os";
 
 export type SupportMatrix = Record<string, Browser>;
 
@@ -152,7 +153,7 @@ interface Options {
   build?: string;
 }
 
-const ni = require("os").networkInterfaces();
+const ni = networkInterfaces();
 const hostname = Object.keys(ni)
   .map((interf) =>
     // @ts-ignore
