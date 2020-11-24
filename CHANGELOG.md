@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/ideal-postcodes/supported-browsers/compare/2.3.2...2.4.0) (2020-11-24)
+
+
+### Features
+
+* **Saucelabs:** Update browser lists ([2176160](https://github.com/ideal-postcodes/supported-browsers/commit/2176160))
+
 ## [2.3.2](https://github.com/ideal-postcodes/supported-browsers/compare/2.3.1...2.3.2) (2020-05-26)
 
 
