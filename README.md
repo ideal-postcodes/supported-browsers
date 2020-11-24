@@ -24,13 +24,11 @@ Browser exports for [Saucelabs](https://saucelabs.com)
 #### Latest Mobile
 
 - Safari (iOS)
-- Chrome (Android 7.0)
+- Chrome (Android)
 
 #### Legacy Desktop
 
 - Internet Explorer 11
-- Firefox 48
-- Chrome 43
 
 #### Legacy Mobile
 
