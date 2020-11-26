@@ -5,6 +5,7 @@
 [![npm version](https://badge.fury.io/js/%40ideal-postcodes%2Fsupported-browsers.svg)](https://badge.fury.io/js/%40ideal-postcodes%2Fsupported-browsers)
 ![Release](https://github.com/ideal-postcodes/supported-browsers/workflows/Release/badge.svg)
 ![CI](https://github.com/ideal-postcodes/supported-browsers/workflows/CI/badge.svg)
+![Cross Browser Testing](https://github.com/ideal-postcodes/supported-browsers/workflows/Cross%20Browser%20Testing/badge.svg)
 
 `@ideal-postcodes/supported-browsers` exports a matrix of supported browsers
 
