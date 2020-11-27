@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/ideal-postcodes/supported-browsers/compare/2.4.0...2.5.0) (2020-11-27)
+
+
+### Features
+
+* **Android:** Bump legacy to 6.0 ([bbbe48a](https://github.com/ideal-postcodes/supported-browsers/commit/bbbe48a))
+
 # [2.4.0](https://github.com/ideal-postcodes/supported-browsers/compare/2.3.2...2.4.0) (2020-11-24)
 
 
