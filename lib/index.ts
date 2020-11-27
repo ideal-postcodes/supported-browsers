@@ -101,8 +101,8 @@ export const legacyMobile: SupportMatrix = {
     base,
     appiumVersion,
     deviceName: "Android GoogleAPI Emulator",
-    browserName: "Browser",
-    platformVersion: "5.1",
+    browserName: "Chrome",
+    platformVersion: "6.0",
     platformName: "Android",
   },
   "ios-legacy": {

@@ -33,7 +33,7 @@ Browser exports for [Saucelabs](https://saucelabs.com)
 
 #### Legacy Mobile
 
-- Android Browser (Android 5.1)
+- Chrome (Android 6.0)
 - Safari (iOS 10.3)
 
 ### Configuration & Usage
