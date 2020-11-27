@@ -1,6 +1,9 @@
 name: Cross Browser Testing
 
 on:
+  pull_request:
+    branhes:
+      - master
   push:
     branches:
       - saucelabs
