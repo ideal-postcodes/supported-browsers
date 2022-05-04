@@ -88,10 +88,10 @@ export const latestMobile: SupportMatrix = {
   },
   "android-latest": {
     base,
-    appiumVersion,
-    deviceName: "Android GoogleAPI Emulator",
+    appiumVersion: "1.22.1",
+    deviceName: "Google Pixel 4a (5G) GoogleAPI Emulator",
     browserName: "Chrome",
-    platformVersion: "11.0",
+    platformVersion: "12.0",
     platformName: "Android",
   },
 };
@@ -108,9 +108,9 @@ export const legacyMobile: SupportMatrix = {
   "ios-legacy": {
     base,
     browserName: "Safari",
-    deviceName: "iPhone Simulator",
+    deviceName: "iPhone 6 Simulator",
     deviceOrientation: "portrait",
-    platformVersion: "10.3",
+    platformVersion: "11.1",
     platformName: "iOS",
     appiumVersion: "1.9.1",
   },
