@@ -34,7 +34,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-${{ matrix.node-version }}
 
       - name: Install
-        run: npm install
+        run: npm ci
 
       - name: Build
         run: npm run build
@@ -46,7 +46,9 @@ jobs:
         run: npm test
 
       - name: Apply npm credentials
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
 
       - name: Semantic Release
         run: npm run semantic-release
